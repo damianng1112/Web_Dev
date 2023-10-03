@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Show letter grade</title>
+	<script>
+		let entry;
+		while(entry!="999"){
+			entry = prompt("Enter number grade from 0 through 100\nOr enter 999 to end entries","999");
+			const number = parseInt(entry);
+			if(isNaN(number)==true){
+				continue;
+			}
+			else{
+				if (number>=0 && number<=100){
+					if(number>87){
+						alert("Number grade = "+number+"\n"
+						+"Letter grade = A")
+					}
+					else if(number>79){
+						alert("Number grade = "+number+"\n"
+						+"Letter grade = B")
+					}
+					else if(number>67){
+						alert("Number grade = "+number+"\n"
+						+"Letter grade = C")
+					}
+					else if(number>59){
+						alert("Number grade = "+number+"\n"
+						+"Letter grade = D")
+					}
+					else{
+						alert("Number grade = "+number+"\n"
+						+"Letter grade = F")
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+<section>
+    <h1>This page is displayed after the JavaScript is executed</h1>
+</section>
+</body>
+</html>

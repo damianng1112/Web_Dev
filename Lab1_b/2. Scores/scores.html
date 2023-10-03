@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">	
+    <title>Average Test Scores</title>
+    <script>
+        let entry;
+        let average;
+        let total = 0;
+        let message;
+		
+        //get 4 scores from user
+		entry = prompt("Enter test score");
+        const score1 = parseInt(entry);
+		
+		entry = prompt("Enter test score");
+        const score2 = parseInt(entry);
+		
+		entry = prompt("Enter test score");
+        const score3 = parseInt(entry);
+
+        entry = prompt("Enter test score");
+        const score4 = parseInt(entry);
+
+        //calculate the average
+		total = score1 + score2 + score3 + score4
+        average = parseInt(total/4);
+
+        message = alert("Score 1 = " + score1 + "\n"
+        +"Score 2 = " + score2 + "\n"
+        +"Score 3 = " + score3 + "\n"
+        +"Score 4 = " + score4 + "\n"+"\n"
+        +"Average score = " + average);
+
+    </script>
+</head>
+<body>
+    <script>
+		document.write("<h1>The Test Scores App</h1>");
+		document.write("Score 1 = " + score1 + "<br>" +
+		    "Score 2 = " + score2 + "<br>" +
+            "Score 3 = " + score3 + "<br>" +
+		    "Score 4 = " + score4 + "<br><br>" +
+			"Average score = " + average + "<br><br>");
+    </script>
+    Thanks for using the Test Scores application!
+</body>
+</html>

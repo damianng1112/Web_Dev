@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">	
+    <title>Convert from Fahrenheit to Centigrade</title>
+    <script>
+        let entry;
+        let option = "y";
+       do{
+            entry = prompt("Enter Farhrenheit temperature");    
+            const farhrenheit = parseInt(entry);
+            if (farhrenheit>=-100 && farhrenheit<=212){
+                const celcius = (farhrenheit - 32)*(5/9);
+                alert("Farhrenheit temperature is " + farhrenheit + "\n"
+                +"Celcius temperature is " + celcius);
+            }
+            else if(farhrenheit=999){
+                break;
+            }
+            else{
+                alert("You entered "+farhrenheit+".\nEntry must be range from -100 to 212.")
+            }
+            option = prompt("Repeat calculation?", "y")
+        }while(option=="y")
+    </script>
+</head>
+<body>
+    <main>
+        <h1>Thanks for using the temperature converter</h1>
+    </main>
+</body>
+</html>

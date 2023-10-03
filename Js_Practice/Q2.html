@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>Number Evaluator</title>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+		<style>
+				html{ background-color: rgb(255,255,204);}
+		</style>
+		<script>
+			function $(id){
+				return document.getElementById(id);
+			}
+
+			function Evaluate(){
+				/*Prompts the user for a start and end position and convert them to integers*/
+				var start = parseInt(prompt("Enter a start position"));
+				var end = parseInt(prompt("Enter a end position"));
+				console.log("Start: "+start+"\tEnd: "+end);
+
+				/*Check that they are valid number*/
+				if(isNaN(start)||isNaN(end)){
+					$("theBody").innerHTML = "<h1>ERROR</h1><p>Pleaese enter valid numerical value</p>"
+				}
+				else{
+					/*Create variables to store the numbers generated and also to 
+					count the number of even and odd values between the range from start to finish
+					*/
+					var oddResult="", evenResult="";
+					var oddCounter=0, evenCounter=0;
+                    var evenSum=0, oddSum=0;
+
+					/*Using a for loop, check each number betwwen the range*/
+					for (var i=start; i<=end; i++){
+						/*Check to see if the number are even, if so then
+						increment the counter andadd the number to the even
+						result*/
+						if(i%2==0){
+							evenCounter++;
+							evenResult+=i+" ";
+                            evenSum+=i;
+						}
+						else{
+							oddCounter++;
+							oddResult+=i+" ";
+                            oddSum+=i;
+						}
+					}
+					/*Finally, if all the numbers have been calculated and
+					everything worked out okay we then print the result to the
+					HTML page and update the DOM*/
+					console.log("Even number "+evenResult);
+                    console.log("Even total "+evenSum+"\tAverage "+(evenSum/evenCounter).toFixed(2));
+					console.log("Odd number "+oddResult);
+                    console.log("Odd total "+oddSum+"\tAverage "+(oddSum/oddCounter).toFixed(2));
+
+					var htmlOut = "<h1 class='w3-center w3-blue'>Number Evaluator</h1><hr/>";
+					htmlOut += "<h2>Start Position: "+start+"<br/>End Position: "
+					+end+"</h2><hr/>";
+					htmlOut += "<h3>Even numbers between range: "+evenCounter+"</h3>";
+					htmlOut += "<p><u>Values Include:</u><br/>"+evenResult+"<br/>";
+                    htmlOut +="Sum= "+evenSum+"<br/>Average= "+(evenSum/evenCounter).toFixed(2)+"</p><hr/>";
+					htmlOut += "<h3>Odd numbers between range: "+oddCounter+"</h3>";
+					htmlOut += "<p><u>Values Include:</u><br/>"+oddResult+"<br/>";
+                    htmlOut +="Sum= "+oddSum+"<br/>Average= "+(oddSum/oddCounter).toFixed(2)+"</p><hr/>";
+					htmlOut += "<p class='w3-center w3-green'>Refresh your page and try again</p>";
+
+					$("theBody").innerHTML=htmlOut;
+					console.log(htmlOut)
+
+				}
+			}
+
+		</script>
+	</head>
+	<body id="theBody" onload="Evaluate()">
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">	
+    <title>Average Test Scores</title>
+    <script>
+        let entry;
+        let average;
+        let scores = [];
+        let names = [];
+        let max = 0;
+        let min = 100;
+        let max_name ="";
+        let min_name = "";
+        let total = 0;
+        let show = "The test scores:\n";
+		
+        do{
+            entry = prompt("Enter test score\n"
+            +"Or enter 999 to end entries", 999);
+            entry = parseInt(entry);
+            if (entry>=0 && entry<=100){
+                scores[scores.length]=entry;
+                names[names.length]=prompt("Enter your name please: ","Enter name here")
+            }
+            else if(entry!=999){
+                alert("Entry must be a valid number from 0 through 100\n"
+                +"Or enter 999 to end entries");
+            }
+        }while (entry!=999);
+
+        for (let i=0; i<scores.length; i++){
+            total = total + scores[i];
+            if(scores[i]>=40){
+                show = show + names[i] + " - " + scores[i] + " - Pass\n"
+            }else{
+                show = show + names[i] + " - " + scores[i] + " - Fail\n"
+            }
+            if(scores[i]>max){
+                max = scores[i];
+                max_name = names[i];
+            }
+            if(scores[i]<min){
+                min = scores[i];
+                min_name = names[i];
+            };
+        }
+        //calculate the average
+        average = parseInt(total/scores.length);
+        alert(show + "\nAverage score is "+average+"\n"
+        +"The maximum score is "+max+" ("+max_name+")\n"
+        +"The minimum score is "+min+" ("+min_name+")");
+    </script>
+</head>
+<body>
+    <script>
+		document.write("<h1>The Test Scores App</h1>");
+        document.write("\nAverage score is "+average+"</br>"
+        +"The maximum score is "+max+" ("+max_name+")</br>"
+        +"The minimum score is "+min+" ("+min_name+")</br>");
+    </script>
+    Thanks for using the Test Scores application!
+</body>
+</html>
